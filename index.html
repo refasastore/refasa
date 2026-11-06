@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Refasa Cosmetics Store | Buy Makeup, Skincare &amp; Beauty Products Online</title>
+<meta name="description" content="Refasa Cosmetics Store - original makeup, skincare and beauty products. Order online with Cash on Delivery.">
+<meta property="og:title" content="Refasa Cosmetics Store">
+<meta property="og:description" content="Makeup, skincare and beauty products. Cash on Delivery.">
+<meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"Refasa Cosmetics Store","description":"Makeup, skincare and beauty products with Cash on Delivery","paymentAccepted":"Cash on Delivery","telephone":"+923216640512","sameAs":["https://www.facebook.com/profile.php?id=61558889830839"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--plum:#3b1a2e;--blush:#f8e8e4;--rose:#c4526b;--gold:#b8925a;--ink:#2a1a22;--bg:#fffaf8;--line:#ecd9d4}
+*{box-sizing:border-box;margin:0}
+body{font:400 16px/1.5 Jost,system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+h1,h2,h3,.logo{font-family:'Cormorant Garamond',serif;font-weight:700}
+header{background:var(--plum);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 5vw;position:sticky;top:0;z-index:5}
+.logo{font-size:28px;letter-spacing:.5px}
+button,.btn{font:500 15px Jost,sans-serif;background:var(--rose);color:#fff;border:0;border-radius:8px;padding:11px 18px;cursor:pointer}
+button.alt{background:transparent;border:1px solid currentColor;color:inherit}
+button.sm{padding:6px 10px;font-size:13px}button.del{background:#8a2b2b}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.hero{background:linear-gradient(135deg,var(--blush),#f1cfc9);padding:9vh 5vw;text-align:center}
+.hero h1{font-size:clamp(38px,7vw,72px);color:var(--plum);line-height:1.05}
+.hero p{max-width:520px;margin:14px auto 22px}
+.ad{margin:24px 5vw;border:1px dashed var(--gold);border-radius:10px;padding:14px;text-align:center;background:#fff}
+.ad img{max-width:100%;border-radius:8px}
+main{padding:30px 5vw}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px;margin-top:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;aspect-ratio:1;object-fit:cover;background:var(--blush)}
+.card div{padding:12px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:20px}.price{color:var(--rose);font-weight:500}.muted{color:#8a747c;font-size:14px}
+.card button{margin-top:auto}
+.drawer{position:fixed;inset:0 0 0 auto;width:min(420px,100%);background:#fff;box-shadow:-8px 0 30px #0003;transform:translateX(105%);transition:transform .25s;z-index:10;padding:20px;overflow:auto}
+.drawer.open{transform:none}
+input,textarea,select{width:100%;font:inherit;color:var(--ink);padding:10px;border:1px solid var(--line);border-radius:8px;margin:4px 0 10px;background:#fff}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:14px 0}
+.stat{background:var(--plum);color:#fff;border-radius:12px;padding:16px}.stat b{display:block;font:700 30px 'Cormorant Garamond',serif}
+.tabs{display:flex;gap:8px;margin:10px 0 16px;flex-wrap:wrap}.tabs button{background:#fff;color:var(--ink);border:1px solid var(--line)}.tabs .on{background:var(--rose);color:#fff}
+.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px}
+.thumb{width:44px;height:44px;border-radius:8px;object-fit:cover}
+footer{background:var(--plum);color:#e9cfd0;text-align:center;padding:24px}
+.hide{display:none}
+.wa{position:fixed;right:16px;bottom:16px;background:#1f9d55;color:#fff;border-radius:999px;padding:12px 18px;text-decoration:none;font-weight:500;box-shadow:0 4px 14px #0004;z-index:6}
+footer a{color:inherit;margin:0 8px}
+</style>
+</head>
+<body>
+<header><div class="logo">Refasa Cosmetics</div><div><button class="alt" id="cartBtn">Cart (<span id="cc">0</span>)</button></div></header>
+<div id="shop">
+  <section class="hero"><h1>Glow your own way</h1><p>Original makeup, skincare and beauty essentials, delivered to your door. Pay when it arrives.</p><button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop products</button></section>
+  <div id="adSlot"></div>
+  <main><h2 id="products">Our products</h2><div class="grid" id="grid"></div></main>
+</div>
+<div id="admin" class="hide"><main id="adminBody"></main></div>
+<a class="wa" href="https://wa.me/923216640512?text=Assalam%20o%20Alaikum" target="_blank" rel="noopener">WhatsApp us</a>
+<footer><p><a href="https://wa.me/923216640512" target="_blank" rel="noopener">WhatsApp: 0321 6640512</a> <a href="https://www.facebook.com/profile.php?id=61558889830839" target="_blank" rel="noopener">Facebook</a></p>© <span id="yr"></span> Refasa Cosmetics Store · Cash on Delivery · <a href="#admin" style="color:inherit">Owner login</a></footer>
+
+<aside class="drawer" id="drawer" aria-label="Cart">
+  <div class="row"><h2>Your cart</h2><button class="alt sm" id="closeCart" style="color:var(--ink)">Close</button></div>
+  <div id="cartItems"></div><p><b>Total: <span id="total">0</span></b> · Cash on Delivery</p>
+  <div id="checkout"></div>
+</aside>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+/* ====== STEP 1: paste your Firebase config here (see setup steps). Leave empty = demo mode ====== */
+const FIREBASE_CONFIG = { apiKey:"AIzaSyDr67eB_jUOQqKieQJKj_eGb5XdxQiTm5c", authDomain:"refasa-1d0f1.firebaseapp.com", projectId:"refasa-1d0f1", appId:"1:232144809610:web:40f1e684c74435f721c773" };
+const CURRENCY = "Rs";
+const PH="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Crect width='10' height='10' fill='%23f8e8e4'/%3E%3C/svg%3E";
+/* ================================================================================================= */
+
+const $=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const LIVE = !!FIREBASE_CONFIG.apiKey;
+let fdb, auth;
+if(LIVE){firebase.initializeApp(FIREBASE_CONFIG);fdb=firebase.firestore();auth=firebase.auth();}
+const M={};let demoIn=false;
+const getK=k=>{try{return localStorage.getItem(k)}catch(e){return M[k]??null}};
+const setK=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){M[k]=v}};
+const L=c=>JSON.parse(getK('rafasa_'+c)||'[]');
+const S=(c,v)=>setK('rafasa_'+c,JSON.stringify(v));
+const DB={
+  async list(c){if(LIVE){const s=await fdb.collection(c).get();return s.docs.map(d=>({id:d.id,...d.data()}));}return L(c);},
+  async save(c,o){if(LIVE){const {id,...r}=o;if(id){await fdb.collection(c).doc(id).set(r);return id}return (await fdb.collection(c).add(r)).id;}
+    const a=L(c);if(o.id){const i=a.findIndex(x=>x.id===o.id);a[i]=o}else{o.id='x'+Date.now();a.push(o)}S(c,a);return o.id;},
+  async del(c,id){if(LIVE)return fdb.collection(c).doc(id).delete();S(c,L(c).filter(x=>x.id!==id));},
+  async site(){if(LIVE){const d=await fdb.collection('settings').doc('site').get();return d.exists?d.data():{}}return JSON.parse(getK('rafasa_site')||'{}')},
+  async setSite(o){if(LIVE)return fdb.collection('settings').doc('site').set(o);setK('rafasa_site',JSON.stringify(o))}
+};
+$('#yr').textContent=new Date().getFullYear();
+
+/* ---------- Shop ---------- */
+let products=[],cart=[];
+async function loadShop(){
+  products=await DB.list('products');
+  $('#grid').innerHTML=products.length?products.map(p=>`<article class="card"><img src="${esc(p.img||PH)}" alt="${esc(p.name)}" loading="lazy"><div><h3>${esc(p.name)}</h3><span class="muted">${esc(p.cat)}</span><p class="muted">${esc(p.desc)}</p><span class="price">${CURRENCY} ${esc(p.price)}</span>${p.stock===false?'<button disabled>Sold out</button>':`<button onclick="addCart('${p.id}')">Add to cart</button>`}</div></article>`).join(''):'<p class="muted">Products coming soon.</p>';
+  const s=await DB.site(), slot=$('#adSlot');slot.innerHTML='';
+  if(s.adImg||s.adText||s.adHtml){const d=document.createElement('div');d.className='ad';
+    if(s.adHtml){d.appendChild(document.createRange().createContextualFragment(s.adHtml))}
+    else d.innerHTML=(s.adImg?`<img src="${esc(s.adImg)}" alt="Ad">`:'')+(s.adText?`<p>${esc(s.adText)}</p>`:'');
+    if(s.adLink&&!s.adHtml){const a=document.createElement('a');a.href=s.adLink;a.rel='sponsored noopener';a.appendChild(d);slot.appendChild(a)}else slot.appendChild(d)}
+}
+function addCart(id){const p=products.find(x=>x.id===id),i=cart.find(x=>x.id===id);i?i.qty++:cart.push({id,name:p.name,price:+p.price,qty:1});drawCart();$('#drawer').classList.add('open')}
+function drawCart(){
+  $('#cc').textContent=cart.reduce((a,b)=>a+b.qty,0);
+  $('#cartItems').innerHTML=cart.length?cart.map((c,i)=>`<div class="row"><span>${esc(c.name)} × ${c.qty}</span><span>${CURRENCY} ${c.price*c.qty} <button class="sm del" onclick="cart.splice(${i},1);drawCart()">x</button></span></div>`).join(''):'<p class="muted">Cart is empty.</p>';
+  $('#total').textContent=CURRENCY+' '+cart.reduce((a,b)=>a+b.price*b.qty,0);
+  $('#checkout').innerHTML=cart.length?`<h3>Delivery details</h3><label>Full name<input id="oName"></label><label>Phone number<input id="oPhone" type="tel"></label><label>City<input id="oCity"></label><label>Full address<textarea id="oAddr" rows="2"></textarea></label><button onclick="placeOrder()" style="width:100%">Place order (Cash on Delivery)</button>`:'';
+}
+async function placeOrder(){
+  const o={name:$('#oName').value.trim(),phone:$('#oPhone').value.trim(),city:$('#oCity').value.trim(),addr:$('#oAddr').value.trim()};
+  if(!o.name||!o.phone||!o.city||!o.addr)return alert('Please fill in all delivery details.');
+  await DB.save('orders',{...o,items:cart,total:cart.reduce((a,b)=>a+b.price*b.qty,0),status:'New',payment:'Cash on Delivery',at:Date.now()});
+  cart=[];drawCart();$('#checkout').innerHTML='';$('#cartItems').innerHTML='<h3>Thank you! Your order is placed.</h3><p>We will call you to confirm. Pay cash when it arrives.</p>';
+}
+$('#cartBtn').onclick=()=>{drawCart();$('#drawer').classList.add('open')};$('#closeCart').onclick=()=>$('#drawer').classList.remove('open');
+
+/* ---------- Admin ---------- */
+function route(){const a=location.hash==='#admin';$('#shop').classList.toggle('hide',a);$('#admin').classList.toggle('hide',!a);if(a)adminInit();else loadShop()}
+addEventListener('hashchange',route);
+async function adminInit(){
+  if(LIVE){auth.onAuthStateChanged(u=>u?dash():loginForm())}
+  else if(demoIn)dash();else loginForm();
+}
+function loginForm(){$('#adminBody').innerHTML=`<div class="panel" style="max-width:380px;margin:auto"><h2>Owner login</h2>${LIVE?'':'<p class="muted">Demo mode. Password: admin123</p>'}<label>${LIVE?'Email':'Username'}<input id="lu" autocomplete="username"></label><label>Password<input id="lp" type="password" autocomplete="current-password"></label><button onclick="doLogin()" style="width:100%">Log in</button><p id="le" style="color:#8a2b2b"></p><p><a href="#">Back to store</a></p></div>`}
+async function doLogin(){try{if(LIVE)await auth.signInWithEmailAndPassword($('#lu').value,$('#lp').value);else if($('#lp').value.trim().toLowerCase()==='admin123'){demoIn=true;dash()}else throw 0}catch(e){$('#le').textContent='Wrong login details.'}}
+let tab='Products';
+async function dash(){
+  const [pr,od]=await Promise.all([DB.list('products'),DB.list('orders')]);od.sort((a,b)=>b.at-a.at);
+  const rev=od.filter(o=>o.status==='Delivered').reduce((a,b)=>a+b.total,0);
+  $('#adminBody').innerHTML=`<div class="row"><h2>Dashboard</h2><span><a href="#">View store</a> <button class="alt sm" style="color:var(--ink)" onclick="logout()">Log out</button></span></div>
+  <div class="stats"><div class="stat"><b>${pr.length}</b>Products</div><div class="stat"><b>${od.length}</b>Total orders</div><div class="stat"><b>${od.filter(o=>o.status==='New').length}</b>New orders</div><div class="stat"><b>${CURRENCY} ${rev}</b>Delivered sales</div></div>
+  <div class="tabs">${['Products','Orders','Ads'].map(t=>`<button class="${t===tab?'on':''}" onclick="tab='${t}';dash()">${t}</button>`).join('')}</div><div id="tabBody"></div>`;
+  if(tab==='Products')prodTab(pr);else if(tab==='Orders')orderTab(od);else adTab();
+}
+function logout(){LIVE?auth.signOut():(demoIn=false,loginForm())}
+let editing={};
+function prodTab(pr){
+  window._pr=pr;const e=editing;
+  $('#tabBody').innerHTML=`<div class="panel"><h3>${e.id?'Edit product':'Add product'}</h3><label>Name<input id="pn" value="${esc(e.name)}"></label><label>Price (${CURRENCY})<input id="pp" type="number" value="${esc(e.price)}"></label><label>Category<input id="pc" value="${esc(e.cat)}" placeholder="Lipstick, Skincare..."></label><label>Details<textarea id="pd" rows="3">${esc(e.desc)}</textarea></label><label>Photo<input id="pf" type="file" accept="image/*"></label>${e.img?`<img class="thumb" src="${esc(e.img)}" alt="">`:''}<label style="display:block;margin:6px 0 12px"><input type="checkbox" id="ps" style="width:auto" ${e.stock===false?'':'checked'}> In stock</label><button onclick="saveProd()">Save product</button> ${e.id?'<button class="alt" style="color:var(--ink)" onclick="editing={};dash()">Cancel</button>':''}</div>
+  <div class="panel">${pr.map(p=>`<div class="row"><span><img class="thumb" src="${esc(p.img||PH)}" alt=""> ${esc(p.name)} · ${CURRENCY} ${esc(p.price)}</span><span><button class="sm" onclick="editing=_pr.find(x=>x.id==='${p.id}');dash()">Edit</button> <button class="sm del" onclick="delProd('${p.id}')">Delete</button></span></div>`).join('')||'<p class="muted">No products yet.</p>'}</div>`;
+}
+function shrink(file){return new Promise(r=>{const i=new Image();i.onload=()=>{const m=700,k=Math.min(1,m/Math.max(i.width,i.height)),c=document.createElement('canvas');c.width=i.width*k;c.height=i.height*k;c.getContext('2d').drawImage(i,0,0,c.width,c.height);r(c.toDataURL('image/jpeg',.75))};i.src=URL.createObjectURL(file)})}
+async function saveProd(){
+  const f=$('#pf').files[0],p={...editing,name:$('#pn').value.trim(),price:+$('#pp').value,cat:$('#pc').value.trim(),desc:$('#pd').value.trim(),stock:$('#ps').checked};
+  if(!p.name||!p.price)return alert('Name and price are required.');
+  if(f)p.img=await shrink(f);editing={};await DB.save('products',p);dash();
+}
+async function delProd(id){if(confirm('Delete this product?')){await DB.del('products',id);dash()}}
+function orderTab(od){
+  $('#tabBody').innerHTML=`<div class="panel">${od.map(o=>`<div class="row" style="align-items:flex-start"><div><b>${esc(o.name)}</b> · <a href="tel:${esc(o.phone)}">${esc(o.phone)}</a><br><span class="muted">${esc(o.addr)}, ${esc(o.city)}</span><br>${o.items.map(i=>esc(i.name)+' ×'+i.qty).join(', ')}<br><b>${CURRENCY} ${o.total}</b> · ${new Date(o.at).toLocaleString()}</div><select style="width:130px" onchange="setStatus('${o.id}',this.value)">${['New','Confirmed','Shipped','Delivered','Cancelled'].map(s=>`<option ${s===o.status?'selected':''}>${s}</option>`).join('')}</select></div>`).join('')||'<p class="muted">No orders yet.</p>'}</div>`;
+  window._od=od;
+}
+async function setStatus(id,s){const o=_od.find(x=>x.id===id);o.status=s;await DB.save('orders',o);dash()}
+async function adTab(){
+  const s=await DB.site();
+  $('#tabBody').innerHTML=`<div class="panel"><h3>Banner ad on home page</h3><label>Ad text<input id="at" value="${esc(s.adText)}"></label><label>Ad image link (https://...)<input id="ai" value="${esc(s.adImg)}"></label><label>Click link<input id="al" value="${esc(s.adLink)}"></label><label>Or paste ad code (Google AdSense etc.)<textarea id="ah" rows="4">${esc(s.adHtml)}</textarea></label><button onclick="saveAd()">Save ad</button></div>`;
+}
+async function saveAd(){await DB.setSite({adText:$('#at').value,adImg:$('#ai').value,adLink:$('#al').value,adHtml:$('#ah').value});alert('Ad saved.')}
+route();
+</script>
+</body>
+</html>
